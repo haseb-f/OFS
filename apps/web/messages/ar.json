@@ -1,0 +1,25 @@
+{
+  "home": {
+    "title": "نظام إدارة الطلبات",
+    "description": "مرحباً بك في نظام OFS"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "orders": "الطلبات",
+    "inventory": "المخزون",
+    "reports": "التقارير",
+    "settings": "الإعدادات"
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "back": "رجوع",
+    "search": "بحث"
+  }
+}

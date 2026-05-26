@@ -1,0 +1,95 @@
+/* OFS Base Styles — RTL-first, CSS logical properties only */
+/* No physical directional properties (left/right/margin-left/padding-right). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-block-size: 100vh;
+  background-color: var(--color-surface);
+}
+
+/* Links */
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Focus visible — accessible, no outline on mouse */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Images */
+img,
+video {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Horizontal rule — logical property */
+hr {
+  border: none;
+  border-block-end: 1px solid var(--color-border);
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+  inline-size: 6px;
+  block-size: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-raised);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
