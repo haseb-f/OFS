@@ -1,7 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-
-const API_URL = process.env['NEXT_PUBLIC_API_URL'] ?? 'http://localhost:3001';
+import { apiUrl } from '@/lib/api';
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   let body: unknown = null;
@@ -17,7 +16,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   let apiRes: Response;
   try {
-    apiRes = await fetch(`${API_URL}/v1/auth/register`, {
+    apiRes = await fetch(apiUrl('/auth/register'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),

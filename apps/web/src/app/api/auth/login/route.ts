@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server';
 import { getIronSession } from 'iron-session';
 import { sessionOptions, REMEMBER_ME_TTL, SESSION_TTL } from '@/lib/session';
 import type { SessionData } from '@/lib/session';
+import { apiUrl } from '@/lib/api';
 
-const API_URL = process.env['NEXT_PUBLIC_API_URL'] ?? 'http://localhost:3001';
 const TAG = '[/api/auth/login]';
 
 interface LoginBody {
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: 'البريد الإلكتروني وكلمة المرور مطلوبان' }, { status: 400 });
   }
 
-  const endpoint = `${API_URL}/v1/auth/login`;
+  const endpoint = apiUrl('/auth/login');
   console.log(`${TAG} Calling NestJS: ${endpoint}`);
 
   let apiRes: Response | null = null;
@@ -56,9 +56,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       body: JSON.stringify({ email: body.email, password: body.password }),
     });
   } catch (err) {
-    console.error(`${TAG} Network error reaching NestJS API at ${API_URL}:`, err);
+    console.error(`${TAG} Network error reaching NestJS API:`, err);
     return NextResponse.json(
-      { error: `تعذّر الاتصال بالخادم (${API_URL})` },
+      { error: 'تعذّر الاتصال بالخادم' },
       { status: 503 },
     );
   }
