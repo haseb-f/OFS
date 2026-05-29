@@ -125,7 +125,8 @@
       "PowerShell(Get-ChildItem -Path \"D:\\\\Systems\\\\ofs\\\\apps\\\\web\\\\src\\\\components\" -Recurse -Directory | ForEach-Object { $_.FullName.Replace\\('D:\\\\Systems\\\\ofs\\\\apps\\\\web\\\\src\\\\', ''\\) } | Sort-Object)",
       "PowerShell(Get-ChildItem -Path \"D:\\\\Systems\\\\ofs\\\\apps\\\\web\\\\src\\\\app\" -Recurse -Directory | Where-Object { $_.FullName -notmatch '\\\\.next' } | ForEach-Object { $_.FullName.Replace\\('D:\\\\Systems\\\\ofs\\\\apps\\\\web\\\\src\\\\', ''\\) } | Sort-Object)",
       "Bash(Get-ChildItem -Recurse -Filter \"layout.tsx\" \"D:\\\\Systems\\\\ofs\\\\apps\\\\web\\\\src\")",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "Bash(xargs grep -l \"dir.*rtl\\\\|rtl.*dir\\\\|locale.*ar\\\\|getDirection\\\\|direction\")"
     ]
   }
 }

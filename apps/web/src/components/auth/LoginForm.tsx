@@ -158,6 +158,14 @@ export default function LoginForm() {
           </OfsButton>
         </form>
 
+        <div className="auth-switch-divider"><span>أو</span></div>
+        <Link href={`/${locale}/platform/login`} className="auth-switch-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>الدخول كمالك المنصة</span>
+        </Link>
+
         <p className="auth-register-link">
           ليس لديك حساب؟{' '}
           <Link href={`/${locale}/register`} className="auth-forgot-link">

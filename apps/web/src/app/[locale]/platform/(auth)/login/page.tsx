@@ -185,11 +185,17 @@ export default function PlatformLoginPage() {
             </OfsButton>
           </form>
 
+          <div className="auth-switch-divider"><span>أو</span></div>
+          <Link href={`/${locale}/login`} className="auth-switch-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>الدخول كنظام / براند</span>
+          </Link>
+
           <p className="plat-login-footer-note">
             هذه اللوحة مخصصة لمالكي المنصة فقط.
-            <br/>
-            للدخول كمستخدم براند{' '}
-            <Link href={`/${locale}/login`} className="plat-forgot-link">اضغط هنا</Link>
           </p>
 
         </div>
